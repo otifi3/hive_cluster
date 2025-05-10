@@ -38,13 +38,17 @@ This project sets up a **Highly Available Hadoop Cluster with Apache Hive** usin
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/otifi3/hadoop_cluster.git
-cd hadoop_cluster
+git clone https://github.com/otifi3/hive_cluster.git
+cd hive_cluster
 ```
 
 ### 2. Build and Launch the Cluster
 
 ```bash
+docker-compose up --build
+cd db
+docker-compose up --build
+cd ../elt
 docker-compose up --build
 ```
 
