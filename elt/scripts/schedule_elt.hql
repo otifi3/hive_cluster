@@ -5,7 +5,6 @@ SET hive.exec.max.dynamic.partitions.pernode = 10000;
 SET hive.support.concurrency = true;
 SET hive.txn.manager = org.apache.hadoop.hive.ql.lockmgr.DbTxnManager;
 SET hive.compactor.initiator.on = true;
-SET hive.compactor.worker.threads = 1;
 SET hive.vectorized.execution.enabled=false;
 SET hive.vectorized.execution.reduce.enabled=false;
 

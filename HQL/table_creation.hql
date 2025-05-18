@@ -270,3 +270,6 @@ LOAD DATA INPATH '/data/airline/orc_dwh/loyalty_program_fact.orc' INTO TABLE loy
 
 -- Load data into dim_airplane table
 LOAD DATA INPATH '/data/airline/orc_dwh/dim_airplane.orc' INTO TABLE dim_airplane;
+
+
+

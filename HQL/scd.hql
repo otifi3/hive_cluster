@@ -115,6 +115,16 @@ SELECT * FROM unchanged;
 
 
 
+ALTER TABLE airline_dwh.passenger SET TBLPROPERTIES (
+  'compactorthreshold.hive.compactor.delta.num.threshold' = '4',     -- Min delta files to trigger
+  'compactorthreshold.hive.compactor.delta.pct.threshold' = '0.1',   -- 10% of base size
+  'hive.compactor.initiator.on' = 'true'
+);
+
+
+SHOW COMPACTIONS;
+
+
 
 
 

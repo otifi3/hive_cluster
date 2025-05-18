@@ -42,9 +42,9 @@ services:
     healthcheck:
       test: ["CMD", "/home/hadoop/health_check.sh"]
       interval: 7s
-      timeout: 3s
-      retries: 7
-      start_period: 10s 
+      timeout: 7s
+      retries: 15
+      start_period: 15s
     depends_on:
       - m1
     # restart: always       
@@ -68,9 +68,9 @@ services:
     healthcheck:
       test: ["CMD", "/home/hadoop/health_check.sh"]
       interval: 7s
-      timeout: 3s
-      retries: 7
-      start_period: 10s 
+      timeout: 7s
+      retries: 15
+      start_period: 15s
     depends_on:
       - m1
     # restart: always
@@ -135,8 +135,8 @@ services:
       test: ["CMD-SHELL", "pg_isready -U hiveuser -d metastore"]
       interval: 7s
       timeout: 7s
-      retries: 7
-      start_period: 9s 
+      retries: 15
+      start_period: 15s
     # restart: always
 
   h1:
@@ -162,7 +162,7 @@ services:
       test: ["CMD-SHELL", "ps aux | grep -i 'HiveMetaStore' | grep -v grep"]
       interval: 7s
       timeout: 7s
-      retries: 10
+      retries: 15
       start_period: 15s
     # restart: always     
   h2:
@@ -185,7 +185,7 @@ services:
       test: ["CMD-SHELL", "ps aux | grep -i 'HiveServer2' | grep -v grep"]
       interval: 7s
       timeout: 7s
-      retries: 10
+      retries: 15
       start_period: 15s
     environment:
       - HADOOP_CLASSPATH=/usr/local/tez/conf:/usr/local/tez/tez-mapreduce-0.10.3.jar

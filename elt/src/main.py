@@ -1,14 +1,18 @@
 import pandas as pd
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from sqlalchemy import create_engine
 
 # Create SQLAlchemy engine
 engine = create_engine("postgresql+psycopg2://user:123@airline_oltp:5432/airline")
 
-date_to_compare = str(datetime.now()).split()[0]
+# date_to_compare = str(datetime.now()).split()[0]    # old
 
-# date_to_compare = '2020-01-01'
+# today_str = str(datetime.now()).split()[0]
+# today_date = datetime.strptime(today_str, '%Y-%m-%d').date()
+# yesterday = today_date - timedelta(days=1)
+
+date_to_compare = '2020-01-01'
 
 table_names = [
     'airport', 'airplane', 'baggage', 'complaint',
